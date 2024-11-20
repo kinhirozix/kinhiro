@@ -22,17 +22,17 @@ gradlePlugin {
     plugins {
         create("settings") {
             id = "me.kinhiro.composite.settings"
-            implementationClass = "BuildLogicSettings"
+            implementationClass = "me.kinhiro.composite.RootSettings"
         }
 
         create("root") {
             id = "me.kinhiro.composite.root"
-            implementationClass = "RootPlugin"
+            implementationClass = "me.kinhiro.composite.RootPlugin"
         }
 
         create("code") {
             id = "me.kinhiro.composite.code"
-            implementationClass = "CodeCheckPlugin"
+            implementationClass = "me.kinhiro.composite.CodePlugin"
         }
     }
 }
