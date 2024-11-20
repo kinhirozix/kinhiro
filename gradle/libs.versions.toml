@@ -1,0 +1,24 @@
+# Version catalog is a central place for you to declare and version dependencies.
+# https://docs.gradle.org/current/userguide/platforms.html#sub:version-catalog
+# https://docs.gradle.org/current/userguide/platforms.html#sub::toml-dependencies-format
+
+[versions]
+java = "21"
+kotlin = "2.0.21"
+spotless = "7.0.0.BETA4"
+annotations = "26.0.1"
+spotbugs-annotations = "4.8.6"
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+
+[libraries]
+kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlin" }
+kotlin-reflect = { group = "org.jetbrains.kotlin", name = "kotlin-reflect", version.ref = "kotlin" }
+annotations = { group = "org.jetbrains", name = "annotations", version.ref = "annotations" }
+spotbugs-annotations = { group = "com.github.spotbugs", name = "spotbugs-annotations", version.ref = "spotbugs-annotations" }
+spotless-plugin-gradle = { group = "com.diffplug.spotless", name = "spotless-plugin-gradle", version.ref = "spotless" }
+
+# Libraries can be bundled together for easier import.
+[bundles]
