@@ -1,7 +1,0 @@
-internal const val SOURCES_URL: String = "https://github.com/kinhirozix/kinhiro"
-internal const val ISSUES_URL: String = "https://github.com/kinhirozix/kinhiro/issues"
-internal const val LICENSE_NAME: String = "The Apache Software License, Version 2.0"
-internal const val LICENSE_URL: String = "https://www.apache.org/licenses/LICENSE-2.0.txt"
-internal const val SCM_CONN_URL: String = "scm:git:git://github.com/kinhirozix/kinhiro.git"
-internal const val SCM_DEV_URL: String = "scm:git:ssh://git@github.com:kinhirozix/kinhiro.git"
-internal const val SCM_URL: String = "https://github.com/kinhirozix/kinhiro"

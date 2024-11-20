@@ -1,4 +1,5 @@
-import org.gradle.api.Plugin
+package me.kinhiro.composite
+
 import org.gradle.api.initialization.Settings
 import org.gradle.api.initialization.dsl.VersionCatalogBuilder
 import org.gradle.api.internal.file.FileOperations
@@ -6,8 +7,8 @@ import java.io.File
 import java.io.FileNotFoundException
 import javax.inject.Inject
 
-class BuildLogicSettings @Inject constructor(private val fileOperations: FileOperations) : Plugin<Settings> {
-    override fun apply(target: Settings): Unit = with(target) {
+class RootSettings @Inject constructor(private val fileOperations: FileOperations) : AbstractSettings() {
+    override fun Settings.applyPlugin() {
         dependencyResolutionManagement.apply {
             versionCatalogs.apply {
                 val libs = maybeCreate("libs")
@@ -18,7 +19,7 @@ class BuildLogicSettings @Inject constructor(private val fileOperations: FileOpe
                 val overrideLibsVersionsPropertyPrefix = "override.libs.versions."
                 providers.gradlePropertiesPrefixedBy(overrideLibsVersionsPropertyPrefix).get().forEach { key, value ->
                     val alias = key.substringAfter(overrideLibsVersionsPropertyPrefix).replace(".", "-")
-                    libs.overrideVersion(this@with, alias, value)
+                    libs.overrideVersion(this@applyPlugin, alias, value)
                 }
             }
         }

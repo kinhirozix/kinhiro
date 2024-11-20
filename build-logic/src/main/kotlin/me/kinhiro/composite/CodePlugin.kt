@@ -1,10 +1,13 @@
+package me.kinhiro.composite
+
 import com.diffplug.gradle.spotless.SpotlessExtension
 import com.diffplug.gradle.spotless.SpotlessPlugin
+import dependsOn
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
 import java.nio.charset.Charset
 
-class CodeCheckPlugin : AbstractPlugin() {
+class CodePlugin : AbstractPlugin() {
     override fun Project.applyPlugin() {
         plugins.apply(SpotlessPlugin::class.java)
         extensions.configure<SpotlessExtension> {

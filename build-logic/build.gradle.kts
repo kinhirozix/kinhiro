@@ -34,11 +34,6 @@ gradlePlugin {
             id = "me.kinhiro.composite.code"
             implementationClass = "CodeCheckPlugin"
         }
-
-        create("publish") {
-            id = "me.kinhiro.composite.publish"
-            implementationClass = "PublishPlugin"
-        }
     }
 }
 
